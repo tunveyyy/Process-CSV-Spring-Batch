@@ -48,7 +48,7 @@ public class SpringBatchConfig {
     }
 
     @Bean
-    public ItemReader<User> flatFileItemReader(@Value("${file.upload-dir}") Resource resource) {
+    public ItemReader<User> flatFileItemReader(@Value("${input}") Resource resource) {
         FlatFileItemReader<User> flatFileItemReader = new FlatFileItemReader<>();
         flatFileItemReader.setResource(resource);
         flatFileItemReader.setName("CSV Reader");
