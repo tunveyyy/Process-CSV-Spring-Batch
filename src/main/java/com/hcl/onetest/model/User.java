@@ -18,6 +18,26 @@ public class User {
 
     private Long jobId;
 
+    private Long projectId;
+
+    private Long resultId;
+
+    public Long getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(Long projectId) {
+        this.projectId = projectId;
+    }
+
+    public Long getResultId() {
+        return resultId;
+    }
+
+    public void setResultId(Long resultId) {
+        this.resultId = resultId;
+    }
+
     public User(String username, int age, String city) {
         this.username = username;
         this.age = age;
