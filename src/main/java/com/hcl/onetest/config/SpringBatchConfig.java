@@ -71,7 +71,8 @@ public class SpringBatchConfig {
         task.setResources(resources);
         return task;
     }
-    public ItemReader<User> flatFileItemReader() throws IOException {
+    public ItemReader<User> flatFileItemReader(@Value("${input}") Resource resource) {
+
         FlatFileItemReader<User> flatFileItemReader = new FlatFileItemReader<>();
         flatFileItemReader.setName("CSV Reader");
         flatFileItemReader.setLinesToSkip(1);
