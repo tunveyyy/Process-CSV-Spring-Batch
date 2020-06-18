@@ -2,10 +2,9 @@ package com.hcl.onetest.service;
 
 import com.hcl.onetest.config.FileStorageProperties;
 import com.hcl.onetest.exception.FileStorageException;
-import org.apache.tomcat.jni.File;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.StringUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;

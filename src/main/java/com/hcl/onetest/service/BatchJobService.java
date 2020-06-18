@@ -15,31 +15,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
-public class FileUploadService {
-
-    @Autowired
-    private FileStorageService fileStorageService;
+public class BatchJobService {
 
     @Autowired
     private JobLauncher jobLauncher;
 
     @Autowired
     private Job job;
-
-    public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file) {
-
-        String fileName =  fileStorageService.storeFile(file);
-
-        try {
-            load();
-
-        } catch (JobParametersInvalidException | JobExecutionAlreadyRunningException | JobRestartException | JobInstanceAlreadyCompleteException e) {
-            e.printStackTrace();
-        }
-
-        return new UploadFileResponse(fileName, file.getContentType(), file.getSize());
-
-    }
 
 
     public BatchStatus load() throws JobParametersInvalidException, JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException {
